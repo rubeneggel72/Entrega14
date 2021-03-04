@@ -1,0 +1,2 @@
+{"title":"LG K50S 32 GB aurora black 3 GB RAM","price":22900,"thumbnail":"https://raw.githubusercontent.com/rubeneggel72/Entrega10/main/img/img-005.jpg"},
+{"title":"Moto E6s (2020) Special Edition 64 GB gravity gradient 4 GB RAM","price":21000,"thumbnail":"https://raw.githubusercontent.com/rubeneggel72/Entrega10/main/img/img-006.jpg"}

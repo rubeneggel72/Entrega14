@@ -1,0 +1,112 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+.body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	background-color: yellowgreen;
+	margin: 20px;
+}
+
+.chat-container {
+	max-width: 1100px;
+	background: #fff;
+	margin: 30px auto;
+	overflow: hidden;
+}
+
+.chat-header {
+	background: blue;
+	color: #fff;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.chat-main {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
+
+.chat-sidebar {
+	background: rgb(150, 130, 255);
+	color: #fff;
+	padding: 20px 20px 60px;
+	overflow-y: scroll;
+}
+
+.chatroom {
+	padding: 30px;
+	height: 350px;
+	overflow-y: scroll;
+	
+}
+
+
+.chat-form-container {
+	padding: 20px 30px;
+	background-color: blue;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+
+.chat-form-container input[type='text'] {
+	font-size: 16px;
+	padding: 5px;
+	width: 80%;
+	height: 40px;
+	flex: 1;
+}
+
+
+@media (max-width: 700px) {
+	.chat-main {
+		display: block;
+	}
+
+	.chat-sidebar {
+		display: none;
+	}
+}
+#modal{
+	display:block;
+}
+#main{
+	display:none;
+}
+#chat{
+	display:none;
+
+}
+
+.mainContainer{
+    background-color:blue;
+    padding-bottom:50px;
+}
+.productsList{background-color:white;}
+
+.chat-text-user{
+	display:inline;
+	font-weight: bold;
+	color:blue;
+}
+.chat-text-date{
+	display:inline;
+	font-style: normal;
+	color:brown;
+}
+.chat-text{
+	display:block;
+	font-style: italic;
+	color:green;
+}
+.list-item{
+	display:block;
+	font-weight: bold;
+	color:blue;
+}

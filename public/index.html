@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/js/handlebars.min.js"></script>
+    <!-- <script src="template.js"></script> -->
+    <script src="/js/formAdd.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Server</title>.
+</head>
+
+<body class="body">
+    <!--Modal  -->
+    <div id="modal" class="container">
+        <div class="row">
+            <div class="col-8 col-offset-2">
+                <h3 class="modal-title">Ingrese e-mail</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8 col-offset-2">
+                <input id="nickname-input" class="custom-input" type="text" />
+                <button id="send_nickName" class="btn btn-danger" type="button">Send</button>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container mainContainer" id="main">
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <form class="form-horizontal" role="form" method="post" action="/api/productos" id="formAdd">
+                    <div class="col-sm-11">
+                        <h2>Ingrese Producto</h2>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-11 control-label">Nombre</label>
+                        <div class="col-sm-11">
+                            <input type="title" class="form-control" id="title" name="title"
+                                placeholder="Nombre del Producto" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="precio" class="col-sm-11 control-label">Precio</label>
+                        <div class="col-sm-11">
+                            <input type="number" class="form-control" id="price" name="price" placeholder="0" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Imagen URL" class="col-sm-11 control-label">Imagen URL</label>
+                        <div class="col-sm-11">
+                            <input type="url" class="form-control" id="thumbnail" name="thumbnail"
+                                placeholder="https://raw.githubusercontent.com/rubeneggel72/Entrega09/main/img/img-001.jpg"
+                                value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-11 ">
+                            <input id="submit" name="submit" type="submit" value="Send"
+                                class="btn btn-primary btn-lg btn-block">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-12 col-md-8 productsList">
+
+                <div class="row border border-dark ">
+                    <div class="col-12  my-auto">
+                        <h5> LISTADO DE PRODUCTOS</h5>
+                    </div>
+                </div>
+                <div class="row border border-dark">
+                    <div class="col-1  my-auto">
+                        <h5> ID </h5>
+                    </div>
+                    <div class="col-3 my-4 ">
+                        <h5> Imagen</h5>
+                    </div>
+                    <div class="col-5  my-auto">
+                        <h5> Nombre</h5>
+                    </div>
+                    <div class="col-2 my-auto">
+                        <h5> Precio</h5>
+                    </div>
+                </div>
+                <script id="products-template" type="text/x-handlebars-template">
+    {{#if products}} 
+    {{#each products}}
+        <div class="row border border-dark">
+            <div class="col-1  my-auto">
+                <h6> {{this.id}}</h6>
+            </div>
+            <div class="col-3 my-4 ">
+                <img class="img-productos" src={{this.thumbnail}} alt={{this.title}} width="30%" >
+            </div>
+            <div class="col-5  my-auto">
+                <h6> {{this.title}}</h6>
+            </div>
+             <div class="col-2 my-auto" >
+                <h6>$ {{this.price}}</h6>
+            </div>
+        </div>
+    {{/each}}
+  </ul>
+ {{else}}
+ <div class="row border border-dark">
+            <div class="col-12  my-auto">
+                <br>
+                <br>
+                <br>
+                <h4>No hay Productos</h4>
+                <br>
+                <br>
+                <br>
+            </div>
+             </div>
+  {{/if}}
+  </script>
+                <div class="content-placeholder"></div>
+                <div class="row border border-dark">
+                    <div class="col-12  my-auto">
+                        <h5> Fin de la Lista</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chat-container" id="chat">
+        <header class="chat-header">
+            <h3>Centro de Mensajes</h3>
+        </header>
+        <main class="chat-main">
+            <div class="chat-sidebar">
+                <h3><i class="fas fa-users"></i> Users</h3>
+                <ul id="users-list">
+                </ul>
+            </div>
+            <div id="chatroom" class="chatroom">
+                <!--x is typing goes here-->
+                <div id="feedback"></div>
+            </div>
+        </main>
+        <div class="chat-form-container">
+            <input id="message" class="vertical-align custom-input" type="text" required placeholder="Enter Message"
+                autocomplete="off" />
+            <button id="send_message" class="btn btn-danger" type="button">Send</button>
+        </div>
+    </div>
+    <script src="./modalScript.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

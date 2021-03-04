@@ -1,0 +1,23 @@
+{
+  "name": "handkebarsapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./server/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "bootstrap": "^4.6.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "jquery": "^3.5.1",
+    "nodemon": "^2.0.7",
+    "socket.io": "^3.1.1",
+    "uuid": "^8.3.2"
+  }
+}
